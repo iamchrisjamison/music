@@ -50,9 +50,8 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 .site-header__logo {
-  display: block;
-  width: min(94vw, 1400px);
-  margin: 0 auto 1.4rem;
+  width: clamp(220px, 32vw, 340px);
+  margin: 0 auto 1.1rem;
 }
 .site-header__socials {
   display: flex;
@@ -247,8 +246,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--rose); outline-
 
 <!-- HEADER — EDIT: swap the placeholder for your real logo file when ready -->
 <header class="site-header">
-  <img src="images/logo.png" alt="Chris Jamison" class="site-header__logo">
   <div class="wrap">
+    <img src="images/logo.png" alt="Chris Jamison" class="site-header__logo">
     <div class="site-header__socials">
       <a href="https://www.instagram.com/iamchrisjamison" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
       <a href="https://www.facebook.com/iamchrisjamison" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
