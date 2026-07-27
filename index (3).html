@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Jamison — Pittsburgh Singer-Songwriter</title>
+<meta name="description" content="Official site of Chris Jamison, Pittsburgh-based singer-songwriter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #4e6a6d;
+  --rose: #c9ada1;
+  --ink: #1a1a1a;
+  --gray: #b4b4b4;
+  --cream: #eae0cc;
+  --white: #ffffff;
+  --font: 'Manrope', sans-serif;
+  --max-w: 1100px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+body { background: var(--ink); color: var(--cream); font-family: var(--font); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+
+/* placeholder blocks */
+.ph {
+  background: repeating-linear-gradient(-45deg, #2a2a2a, #2a2a2a 10px, #242424 10px, #242424 20px);
+  border: 1px dashed var(--gray);
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+/* header */
+.site-header {
+  padding: 2rem 0 1rem;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.site-header__logo {
+  display: block;
+  width: min(94vw, 1400px);
+  margin: 0 auto 1.4rem;
+}
+.site-header__socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+}
+.site-header__socials a {
+  width: 34px; height: 34px;
+  border: 1px solid var(--gray);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.site-header__socials a:hover { background: var(--rose); border-color: var(--rose); color: var(--ink); }
+
+/* section title convention (lowercase, like johnmayer.com's "tour dates" / "out now" style) */
+.block { padding: clamp(2.5rem, 5vw, 3.5rem) 0; border-top: 1px solid rgba(234,224,204,0.12); }
+.block__title {
+  font-weight: 800;
+  text-transform: lowercase;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* tour dates */
+.tour-list { max-width: 700px; margin: 0 auto; }
+.tour-row {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(234,224,204,0.12);
+  font-size: 0.95rem;
+}
+.tour-row__date { color: var(--rose); font-weight: 800; letter-spacing: 0.03em; }
+.tour-row__venue { font-weight: 600; }
+.tour-row__city { color: var(--gray); font-size: 0.82rem; display: block; }
+.tour-row .btn-sm {
+  border: 1px solid var(--cream);
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.tour-row .btn-sm:hover { background: var(--cream); color: var(--ink); }
+.tour-list--extra { display: none; }
+.tour-list--extra.is-visible { display: block; }
+.tour-toggle {
+  display: block;
+  margin: 1.5rem auto 0;
+  background: none;
+  border: none;
+  color: var(--rose);
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tour-toggle:hover { text-decoration: underline; }
+.tour-empty { text-align: center; color: var(--gray); }
+.tour-empty a { color: var(--rose); text-decoration: underline; }
+
+/* featured banner */
+.banner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.banner .ph { aspect-ratio: 1/1; }
+.banner__eyebrow { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.5rem; }
+.banner__title { font-weight: 800; font-size: clamp(1.1rem, 2.5vw, 1.5rem); margin-bottom: 0.8rem; }
+.banner .btn-sm {
+  display: inline-block;
+  border: 1px solid var(--cream);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.banner .btn-sm:hover { background: var(--cream); color: var(--ink); }
+@media (max-width: 600px) { .banner { grid-template-columns: 1fr; text-align: center; } .banner .ph { max-width: 220px; margin: 0 auto; } }
+
+/* out now */
+.release {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.release .ph { aspect-ratio: 1/1; }
+.release__title { font-weight: 800; font-size: clamp(1.3rem, 3vw, 1.8rem); margin-bottom: 1.2rem; }
+.release__platforms { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.release__platforms a {
+  border: 1px solid var(--gray);
+  padding: 0.55rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.release__platforms a:hover { background: var(--rose); border-color: var(--rose); color: var(--ink); }
+@media (max-width: 600px) { .release { grid-template-columns: 1fr; text-align: center; } .release .ph { max-width: 240px; margin: 0 auto; } .release__platforms { justify-content: center; } }
+
+/* shop */
+.shop-note { text-align: center; color: var(--gray); font-size: 0.85rem; margin-bottom: 2rem; }
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.shop-card { text-align: center; }
+.shop-card .ph { aspect-ratio: 1/1; margin-bottom: 0.8rem; }
+.shop-card__name { font-weight: 600; font-size: 0.88rem; }
+.shop-card__price { color: var(--rose); font-weight: 800; font-size: 0.85rem; margin-top: 0.3rem; }
+.shop-all { display: block; text-align: center; margin-top: 2rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.78rem; color: var(--rose); }
+.shop-all:hover { text-decoration: underline; }
+@media (max-width: 700px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .shop-grid { grid-template-columns: 1fr; max-width: 260px; } }
+
+/* video */
+.video-wrap { max-width: 780px; margin: 0 auto; aspect-ratio: 16/9; position: relative; }
+.video-wrap .ph { width: 100%; height: 100%; aspect-ratio: auto; }
+.video-wrap__play {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+}
+.video-wrap__play span {
+  width: 64px; height: 64px; border-radius: 50%; background: var(--cream); color: var(--ink);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+}
+
+/* song callout */
+.callout { text-align: center; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-size: clamp(0.95rem, 2vw, 1.1rem); }
+.callout a { color: var(--rose); }
+.callout a:hover { text-decoration: underline; }
+
+/* newsletter */
+.newsletter { text-align: center; max-width: 480px; margin: 0 auto; }
+.newsletter__title { font-weight: 800; text-transform: lowercase; font-size: 1.2rem; margin-bottom: 1.2rem; }
+.newsletter__form { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+.newsletter__form input {
+  flex: 1; min-width: 200px;
+  background: transparent;
+  border: 1px solid var(--gray);
+  color: var(--cream);
+  padding: 0.75rem 1rem;
+  font-family: var(--font);
+  font-size: 0.9rem;
+}
+.newsletter__form input::placeholder { color: var(--gray); }
+.newsletter__form button {
+  background: var(--rose);
+  color: var(--ink);
+  border: none;
+  padding: 0.75rem 1.4rem;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.newsletter__form button:hover { background: var(--cream); }
+.newsletter__hint { font-size: 0.72rem; color: var(--gray); margin-top: 0.8rem; }
+
+/* footer */
+.site-footer { text-align: center; padding: 2.5rem 0; font-size: 0.75rem; color: var(--gray); }
+.site-footer a { text-decoration: underline; }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER — EDIT: swap the placeholder for your real logo file when ready -->
+<header class="site-header">
+  <img src="images/logo.png" alt="Chris Jamison" class="site-header__logo">
+  <div class="wrap">
+    <div class="site-header__socials">
+      <a href="https://www.instagram.com/iamchrisjamison" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a href="https://www.facebook.com/iamchrisjamison" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+      <a href="https://www.youtube.com/@ChrisJamisonMusic" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+    </div>
+  </div>
+</header>
+
+<!-- TOUR DATES — EDIT: copy a .tour-row block to add a show -->
+<section class="block" id="shows">
+  <div class="wrap">
+    <p class="block__title">tour dates</p>
+    <div class="tour-list">
+
+      <!-- EMPTY STATE — remove once real shows are added -->
+      <p class="tour-empty">Nothing on the books right now — <a href="#contact">reach out</a> if you'd like Chris at your event.</p>
+
+      <!--
+      COPY FOR EACH SHOW:
+      <div class="tour-row">
+        <span class="tour-row__date">SEP 12 2026</span>
+        <span><span class="tour-row__venue">The Church Brew Works</span><span class="tour-row__city">Pittsburgh, PA</span></span>
+        <a href="#" class="btn-sm">Details</a>
+      </div>
+
+      Put the first 3 rows directly in .tour-list, put any beyond that inside:
+      <div class="tour-list--extra" id="tourExtra"> ...more .tour-row blocks... </div>
+      and the "Show More" button below will reveal them automatically.
+      -->
+
+    </div>
+    <!-- Only needed once you have more than 3 shows — delete otherwise -->
+    <!-- <button class="tour-toggle" onclick="document.getElementById('tourExtra').classList.toggle('is-visible'); this.textContent = this.textContent === 'Show More Dates' ? 'Show Less Dates' : 'Show More Dates';">Show More Dates</button> -->
+  </div>
+</section>
+
+<!-- FEATURED BANNER — EDIT: repurpose for whatever you want to spotlight (a video, an announcement, a devotional series) -->
+<section class="block">
+  <div class="wrap">
+    <div class="banner">
+      <div class="ph">FEATURED<br>IMAGE</div>
+      <div>
+        <p class="banner__eyebrow">Featured</p>
+        <p class="banner__title">Put your next big announcement here</p>
+        <a href="#" class="btn-sm">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUT NOW — EDIT: your latest release -->
+<section class="block">
+  <div class="wrap">
+    <p class="block__title">out now</p>
+    <div class="release">
+      <div class="ph">ALBUM<br>COVER</div>
+      <div>
+        <p class="release__title">Song or EP Title</p>
+        <div class="release__platforms">
+          <a href="#" target="_blank" rel="noopener">Spotify</a>
+          <a href="#" target="_blank" rel="noopener">Apple Music</a>
+          <a href="https://www.youtube.com/@ChrisJamisonMusic" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="block">
+  <div class="wrap">
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/WEB1BWQgaX4"
+        title="Chris Jamison video"
+        style="width:100%;height:100%;border:0;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- SONG CALLOUT — EDIT -->
+<section class="block">
+  <div class="wrap">
+    <p class="callout">"Song Title" — <a href="https://www.youtube.com/@ChrisJamisonMusic" target="_blank" rel="noopener">Out Now</a></p>
+  </div>
+</section>
+
+<!-- NEWSLETTER — front-end only; needs an email service (Mailchimp, ConvertKit, etc.) connected before it can actually collect addresses -->
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="newsletter">
+      <p class="newsletter__title">newsletter sign up</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input type="email" placeholder="Email address" required>
+        <button type="submit">Submit</button>
+      </form>
+      <p class="newsletter__hint">This form is a placeholder — connect it to Mailchimp, ConvertKit, or similar to actually collect emails.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Chris Jamison. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
